@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ConversationAnimator
+  m_Controller: {fileID: 9100000, guid: b3eaefd3cbcf91e49b4bbae197fdd26f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 9ab90e911a1a63c4797de0bd5b0e2e3b, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 9ab90e911a1a63c4797de0bd5b0e2e3b, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 3ac190cd198f08640ba30f03ff1e4ff2, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 5c6750594f63f974ebca882546a75953, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 50c2b0950e0ae5249bb191cb4ae8d65b, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 50c2b0950e0ae5249bb191cb4ae8d65b, type: 3}
