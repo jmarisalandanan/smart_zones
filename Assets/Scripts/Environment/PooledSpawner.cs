@@ -13,6 +13,14 @@ namespace MagicSpace.Utilities
 
         private Transform cachedTransform;
 
+        private void Spawn()
+        {
+            var go = Instantiate(objectsToSpawn[Random.Range(0, objectsToSpawn.Length)], cachedTransform);
+            go.transform.localPosition = Vector3.zero;
+            npcRuntimeSet.KeyPair[go.GetInstanceID()].navigation.SetTarget(initialDestination);
+            TimersManager.SetTimer(this, Random.Range(minSpawnInterval.value, maxSpawnInterval.value), Spawn);
+        }
+
         private void Awake()
         {
             cachedTransform = transform;
@@ -21,14 +29,6 @@ namespace MagicSpace.Utilities
         private void Start()
         {
             Spawn();
-        }
-
-        private void Spawn()
-        {
-            var go = Instantiate(objectsToSpawn[Random.Range(0, objectsToSpawn.Length)], cachedTransform);
-            go.transform.localPosition = Vector3.zero;
-            npcRuntimeSet.KeyPair[go.GetInstanceID()].navigation.SetTarget(initialDestination);
-            TimersManager.SetTimer(this, Random.Range(minSpawnInterval.value, maxSpawnInterval.value), Spawn);
         }
     }
 }

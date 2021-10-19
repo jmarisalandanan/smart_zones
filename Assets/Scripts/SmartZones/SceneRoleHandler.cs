@@ -14,11 +14,6 @@ namespace Magicspace.SmartZones
         private int currentAssignedRoles;
         private int requiredRoles;
 
-        private void Awake()
-        {
-            DetermineEssentialRoles();
-        }
-
         public bool AssignActorToRole(Actor actor)
         {
             foreach (var t in sceneRoles)
@@ -75,6 +70,11 @@ namespace Magicspace.SmartZones
                     requiredRoles++;
                 }
             }
+        }
+
+        private void Awake()
+        {
+            DetermineEssentialRoles();
         }
     }
 }

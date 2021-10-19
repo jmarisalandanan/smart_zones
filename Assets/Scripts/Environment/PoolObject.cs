@@ -6,14 +6,14 @@ namespace MagicSpace.Utilities
     {
         private Transform cachedTransform;
 
-        private void Awake()
-        {
-            cachedTransform = transform;
-        }
-
         public void Spawn()
         {
             cachedTransform.localPosition = Vector3.zero;
+        }
+
+        private void Awake()
+        {
+            cachedTransform = transform;
         }
     }
 }
