@@ -14,5 +14,3 @@ the zone and goes on with his business.
 This is an old project that admittedly deserves a rewrite to be more extendable,designer friendly as well as add other features like role weights, dynamic roles and procedural smart zone generation which I am very interested in. Hoping I have time again to get back to this project to make a more believable living scene.
 
 ![ezgif-7-00bd9de35b43](https://user-images.githubusercontent.com/3711607/137936629-b28465f8-4c2e-488a-a7d6-ae1490f161a8.gif)
-
-This project was inspired by an article I've read here http://www.gameaipro.com/
