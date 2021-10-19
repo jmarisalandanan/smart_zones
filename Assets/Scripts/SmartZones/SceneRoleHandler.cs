@@ -1,8 +1,4 @@
-﻿#region
-
-using UnityEngine;
-
-#endregion
+﻿using UnityEngine;
 
 namespace Magicspace.SmartZones
 {
@@ -11,20 +7,28 @@ namespace Magicspace.SmartZones
         [SerializeField] private SceneRole[] sceneRoles;
         [SerializeField] private NPCRuntimeTable npcSets;
 
-        private int currentAssignedRoles;
-        private int requiredRoles;
+        private int filledEssentialRoles;
+        private int requiredRolesToStart;
 
         public bool AssignActorToRole(Actor actor)
         {
             foreach (var t in sceneRoles)
             {
+                if (filledEssentialRoles < requiredRolesToStart)
+                {
+                    if (!t.isRoleEssential)
+                    {
+                        continue;
+                    }
+                }
+
                 if (!t.isRoleTaken && actor.CanDoRole(t.role))
                 {
                     t.SetActor(actor);
                     npcSets.KeyPair[actor.gameObject.GetInstanceID()].navigation.SetTarget(t.transform);
                     if (t.isRoleEssential)
                     {
-                        currentAssignedRoles++;
+                        filledEssentialRoles++;
                     }
                     return true;
                 }
@@ -35,7 +39,7 @@ namespace Magicspace.SmartZones
 
         public bool IsRoleReady()
         {
-            return currentAssignedRoles >= requiredRoles;
+            return filledEssentialRoles >= requiredRolesToStart;
         }
 
         public void StartScene()
@@ -51,7 +55,7 @@ namespace Magicspace.SmartZones
 
         public void ReleaseAllRoles()
         {
-            currentAssignedRoles = 0;
+            filledEssentialRoles = 0;
             foreach (var t in sceneRoles)
             {
                 if (t.isRoleTaken)
@@ -67,7 +71,7 @@ namespace Magicspace.SmartZones
             {
                 if (t.isRoleEssential)
                 {
-                    requiredRoles++;
+                    requiredRolesToStart++;
                 }
             }
         }
