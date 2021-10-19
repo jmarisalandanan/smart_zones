@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-using UnityEngine.Events;
-
-public class IntGameEventListener : MonoBehaviour {
-
+public class IntGameEventListener : MonoBehaviour
+{
     public IntGameEvent gameEvent;
     public IntEvent response;
 
@@ -13,6 +9,7 @@ public class IntGameEventListener : MonoBehaviour {
     {
         gameEvent.RegisterListener(this);
     }
+
     private void OnDisable()
     {
         gameEvent.UnRegisterListener(this);

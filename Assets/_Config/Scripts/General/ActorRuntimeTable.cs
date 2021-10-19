@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "GeneralTable", menuName = "Config/RoleTable")]
 public class ActorRuntimeTable : RuntimeTable<int, Actor>
