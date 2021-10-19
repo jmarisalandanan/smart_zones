@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Magicspace.SmartZones;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "GeneralTable", menuName = "Config/RoleTable")]
 public class ActorRuntimeTable : RuntimeTable<int, Actor>

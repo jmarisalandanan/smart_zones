@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Magicspace.SmartZones;
+using UnityEngine;
 
 public class IntGameEventListener : MonoBehaviour
 {
